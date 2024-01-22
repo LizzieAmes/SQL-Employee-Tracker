@@ -3,6 +3,11 @@ DROP DATABASE IF EXISTS my_company_db;
 CREATE DATABASE my_company_db;
 USE my_company_db;
 
+CREATE TABLE department (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(30) NOT NULL
+);
+
 CREATE TABLE role (
   id INT AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
