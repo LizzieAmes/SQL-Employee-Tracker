@@ -7,7 +7,9 @@ const {
   addDepartment,
   addRole,
   addEmployee,
-  updateEmployeeRole
+  updateEmployeeRole,
+  deleteEmployee,
+  deleteDepartment
 } = require('./lib/queries');
 
 async function init() {
@@ -25,6 +27,8 @@ async function init() {
         'Add a Role',
         'Add an Employee',
         'Update an Employee Role',
+        'Delete an Employee',
+        'Delete a Department and Associated Roles and Employees',
         'Exit'
         
       ],
@@ -52,6 +56,12 @@ async function init() {
       break;
     case 'Update an Employee Role':
       await updateEmployeeRole();
+      break;
+    case 'Delete an Employee':
+      await deleteEmployee();
+      break;
+    case 'Delete a Department and Associated Roles and Employees':
+      await deleteDepartment();
       break;
     case 'Exit':
       db.end();
